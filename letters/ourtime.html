@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Time</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        color: #eee;
+        font-family: "Georgia", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 700px;
+        text-align: left;
+        font-size: 20px;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+        white-space: pre-line;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+    }
+
+    .cursor {
+        display: inline-block;
+        background: #eee;
+        width: 2px;
+        height: 22px;
+        animation: blink 0.7s infinite;
+        margin-left: 4px;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Clock ticking audio -->
+<audio id="clockSound" autoplay loop>
+  <source src="../sounds/clock.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <div class="title">OUR TIME</div>
+    <div id="text"></div><div class="cursor"></div>
+</div>
+
+<script>
+const letterText = `
+Muntaha,
+
+If you’re reading this, it means time has carried us to this moment.
+A quiet moment.
+Just you, these words, and everything we’ve been through.
+
+Sometimes I think about how strange and beautiful it is — how two lives, two stories, two paths somehow crossed. Out of all the people in the world, out of all the days, it was you and it was me. And from that simple beginning, something meaningful was born.
+
+Our time together hasn’t been measured in days or months.
+It’s measured in smiles that appeared without reason.
+In late conversations that felt too short.
+In moments where the world faded and only our words remained.
+
+Muntaha, you became a gentle presence in my life.
+A calm in noise.
+A light in ordinary days.
+
+Even when nothing special was happening, somehow it still felt special — just because you were part of it.
+
+This page, these words, this little corner of the internet — they are my way of holding onto a feeling. A feeling that time keeps moving, but some moments deserve to stay.
+
+I don’t know what the future looks like.
+None of us ever do.
+But I do know that this chapter — our chapter — will always matter to me.
+Not because it was perfect, but because it was real.
+Because it was ours.
+
+If one day you ever doubt your worth, or wonder if you were important in someone’s story — remember this:
+You were important in mine.
+You still are.
+
+So here’s to our time.
+The memories we’ve made.
+The words we’ve shared.
+The quiet understanding between two hearts trying to find their place in the world.
+
+No matter where life takes us,
+a part of me will always smile when I hear your name.
+
+Muntaha.
+
+Thank you for existing in my timeline.
+
+— Rayyan
+`;
+
+let i = 0;
+const speed = 35; // typing speed
+const textElement = document.getElementById("text");
+
+function typeWriter() {
+    if (i < letterText.length) {
+        textElement.innerHTML += letterText.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+window.onload = () => {
+    typeWriter();
+};
+</script>
+
+</body>
+</html>
