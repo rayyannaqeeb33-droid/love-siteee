@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Thoughts</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Thoughts Floating for Muntaha ☁️</h1>
+
+<div id="cloudArea"></div>
+
+<script>
+const thoughts = [
+  "Rayyan is proud of you 🤍",
+  "You make every day brighter ✨",
+  "You are deeply special 💖",
+  "Rayyan is always on your side 🌙",
+  "You are loved more than you know 🌸"
+];
+
+const cloudArea = document.getElementById("cloudArea");
+
+thoughts.forEach(t => {
+  const div = document.createElement("div");
+  div.className = "cloud";
+  div.innerText = t;
+  cloudArea.appendChild(div);
+});
+</script>
+
+<a class="back" href="../index.html">⬅ Back</a>
+
+</body>
+</html>
