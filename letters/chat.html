@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Message From Rayyan</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Chat With Rayyan 💬</h1>
+
+<div class="chatbox" id="chat"></div>
+
+<script>
+const chat = document.getElementById("chat");
+
+const messages = [
+  {text: "Hi Muntaha 🤍", class: "rayyan"},
+  {text: "I made this little website just for you.", class: "rayyan"},
+  {text: "Every letter here carries a piece of my heart.", class: "rayyan"},
+  {text: "Whenever you open this site…", class: "rayyan"},
+  {text: "Remember Rayyan is always thinking of you 💖", class: "rayyan"}
+];
+
+let i = 0;
+function showMessage() {
+  if (i < messages.length) {
+    const div = document.createElement("div");
+    div.className = "bubble " + messages[i].class;
+    div.innerText = messages[i].text;
+    chat.appendChild(div);
+    i++;
+    setTimeout(showMessage, 1200);
+  }
+}
+showMessage();
+</script>
+
+<a class="back" href="../index.html">⬅ Back</a>
+
+</body>
+</html>
