@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Dice</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Roll the Love Dice 🎲</h1>
+
+<div class="centerBox">
+  <button class="bigBtn" onclick="rollDice()">Roll</button>
+  <h2 id="result"></h2>
+</div>
+
+<script>
+const messages = [
+  "Rayyan misses you 🤍",
+  "You are Muntaha the adorable 💖",
+  "Rayyan is proud of you ✨",
+  "You make my days brighter 🌸",
+  "My heart chose you 💘",
+  "You are deeply loved 💕"
+];
+
+function rollDice() {
+  const msg = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("result").innerText = msg;
+}
+</script>
+
+<a class="back" href="../index.html">⬅ Back</a>
+
+</body>
+</html>
